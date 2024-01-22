@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </header>
-
-        <article>
-            {{ posts }}
-    </body>
-</html>
+<article>
+    {% if posts %}
+        {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+            <!-- Add other post details as needed -->
+        {% endfor %}
+    {% else %}
+        <p>No posts available.</p>
+    {% endif %}
+</article>
